@@ -41,4 +41,30 @@ function $$<T extends Element = Element>(
   return Array.from(parent.querySelectorAll(selector)) as T[];
 }
 
-export { $, $$ };
+function h(
+  tag: keyof HTMLElementTagNameMap,
+  props: Record<string, any> = {},
+  ...children: (Node | number | string | undefined)[]
+) {
+  const el = document.createElement(tag);
+
+  for (const k in props) {
+    if (k.startsWith("on")) {
+      el.addEventListener(k.slice(2).toLowerCase(), props[k]);
+    } else if (k === "innerHTML") {
+      el[k] = props[k];
+    } else {
+      el.setAttribute(k, props[k]);
+    }
+  }
+
+  for (const child of children.flat(Infinity).filter((child) => !!child)) {
+    el.appendChild(
+      child instanceof Node ? child : document.createTextNode(String(child))
+    );
+  }
+
+  return el;
+}
+
+export { $, $$, h };

@@ -1,9 +1,6 @@
 # slideyyy
 
-A very bad not so good slideshow gallery component. Zero dependencies and unstyled.
-
-@todo drag to move slider
-@todo responsive?
+A very bad not so good slideshow gallery component. Unstyled and smol (6.15 kB │ gzip: 1.99 kB).
 
 ## Installation
 
