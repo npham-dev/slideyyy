@@ -2,6 +2,8 @@
 
 A very bad not so good slideshow gallery component. Unstyled and smol (6.15 kB │ gzip: 1.99 kB).
 
+Unfortunately, slidey is currently not very smart or adaptive, so some items may be cut off.
+
 ## Installation
 
 ```

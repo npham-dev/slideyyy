@@ -12,9 +12,9 @@
   "module": "./dist/slidey.js",
   "exports": {
     ".": {
+      "types": "./dist/slidey.d.ts",
       "import": "./dist/slidey.js",
-      "require": "./dist/slidey.umd.cjs",
-      "types": "./dist/slidey.d.ts"
+      "require": "./dist/slidey.umd.cjs"
     }
   },
   "scripts": {
@@ -31,5 +31,9 @@
   },
   "dependencies": {
     "@types/node": "^24.0.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npham-dev/slideyyy"
   }
 }

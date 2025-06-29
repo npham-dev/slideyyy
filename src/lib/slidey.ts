@@ -9,7 +9,7 @@ const CHEVRON_RIGHT = `<svg width="15" height="15" viewBox="0 0 15 15" fill="non
 
 export type SlideySlide = number | "firstElementWidth" | "containerWidth";
 
-export type SlideyButtonCount = number | "auto";
+export type SlideyButtonCount = "none" | "auto";
 
 export type SlideyArgs = {
   container: HTMLElement;
@@ -69,7 +69,7 @@ export class Slidey {
   }
 
   private get shouldRenderButtons() {
-    return this.buttonCount !== 0;
+    return this.buttonCount === "auto";
   }
 
   /**
@@ -157,7 +157,7 @@ export class Slidey {
   }
 
   private getButtonsCount() {
-    if (this.buttonCount === "auto" || this.buttonCount === 0) {
+    if (this.buttonCount === "auto") {
       return this.getAutoButtonsCount();
     } else if (typeof this.buttonCount === "number") {
       return this.buttonCount;
@@ -171,9 +171,11 @@ export class Slidey {
   private getSlide() {
     if (typeof this.slide === "number") {
       return this.slide;
-    } else if (this.slide === "firstElementWidth") {
+    }
+    if (this.slide === "firstElementWidth") {
       return this.getFirstElementWidth();
-    } else if (this.slide === "containerWidth") {
+    }
+    if (this.slide === "containerWidth") {
       return this.container.offsetWidth;
     }
     throw new Error(`[slidey] invalid slide configuration "${this.slide}"`);
