@@ -9,6 +9,7 @@ const CHEVRON_RIGHT = `<svg width="15" height="15" viewBox="0 0 15 15" fill="non
 
 export type SlideySlide = number | "firstElementWidth" | "containerWidth";
 
+// @todo allow numbers but warn if too few (items will be cut off)
 export type SlideyButtonCount = "none" | "auto";
 
 export type SlideyArgs = {
