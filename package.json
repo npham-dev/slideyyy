@@ -1,0 +1,33 @@
+{
+  "name": "slideyyy",
+  "version": "0.0.0",
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md",
+    "selectors.png"
+  ],
+  "main": "./dist/slidey.umd.cjs",
+  "module": "./dist/slidey.js",
+  "exports": {
+    ".": {
+      "import": "./dist/slidey.js",
+      "require": "./dist/slidey.umd.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "build:lib": "tsc && vite build --config vite.config.library.ts"
+  },
+  "devDependencies": {
+    "typescript": "~5.8.3",
+    "vite": "^7.0.0"
+  },
+  "dependencies": {
+    "@types/hyperscript": "^0.0.7",
+    "@types/node": "^24.0.7",
+    "hyperscript": "^2.0.2"
+  }
+}
